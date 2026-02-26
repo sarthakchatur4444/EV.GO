@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Product Page</title>
+
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="icon" type="image/png" href="../images/LOGO.png">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mohave:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Mohave:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Passion+One:wght@400;700;900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Pragati+Narrow:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+        <style>
+            /* Chrome, Edge, Safari */
+            ::-webkit-scrollbar {
+              width: 0px;
+              height: 0px;
+            }
+            /* Firefox */
+            html {
+              scrollbar-width: none;
+              scroll-behavior: smooth;
+            }
+            /* IE / old Edge */
+            body {
+              -ms-overflow-style: none;
+            }
+            @font-face {
+                font-family: 'CustomFont';
+                src: url('../fonts/NicoMoji-Regular.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+            .font-custom {
+                font-family: 'CustomFont', sans-serif;
+            }
+
+            .custom-checkbox:checked {
+                accent-color: rgba(82, 222, 229, 1);
+            }
+        </style>
+
+    </head>
+    <body id="body" class="w-full h-auto m-0 p-0 scroll-smooth select-none overflow-x-hidden scrollbar-y-hide">
+
+        <nav id="M-bar" class="relative z-50 bg-white w-full flex lg:hidden items-end justify-between py-3 pt-5 px-6 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.20)] sticky top-0">
+            <a href="../index.html" class=" w-auto h-auto flex justify-center items-end gap-2">
+                <img class="w-14" src="../images/LOGO.png" alt="Logo">
+                <div class="text-black text-3xl font-['Alumni_Sans_Inline_One'] font-normal self-end h-7 flex lg:hidden">
+                    EV.GO!
+                </div> 
+            </a>
+            <svg id="menuBar4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="cursor-pointer w-6"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path class="fill-teal-600 hover:fill-teal-700" d="M20 17.5a1.5 1.5 0 0 1 .144 2.993L20 20.5H4a1.5 1.5 0 0 1-.144-2.993L4 17.5zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 1 1 0-3z"/></g></svg>
+        </nav>
+
+        <div id="menuSection1" class="w-full h-auto absolute z-50 bg-white border-b border-slate-400 hidden lg:flex justify-center items-start gap-10 px-5 xl:px-10 rounded-bl-2xl rounded-br-2xl py-5 xl:py-10">
+            <div id="bikes" class="w-3/7 h-auto flex flex-col justify-start items-start gap-3 pr-10 lg:pr-20 border-r border-slate-500">
+                <div id="p1">
+                    <div id="b1" class="cursor-pointer flex flex-col justify-center items-center gap-0">
+                        <img src="../images/EBikewBG4.png" class="w-40 2xl:w-56">
+                        <h3 class="text-black text-xl 2xl:text-2xl font-medium font-['Mohave'] mt-0">EVO 50X</h3>
+                        <h5 class="text-teal-500 text-xs 2xl:text-base font-semibold font-['Inter'] mt-0">NEW</h5>
+                    </div>
+                </div>
+                <div id="p2" class="flex justify-center items-center gap-3">
+                    <div id="b2" class="cursor-pointer flex flex-col justify-center items-center gap-0">
+                        <img src="../images/EBikewBG5.png" class="w-40 2xl:w-56">
+                        <h3 class="text-black text-xl 2xl:text-2xl font-medium font-['Mohave'] mt-0">EVO COMET</h3>
+                        <h5 class="text-teal-500 text-xs 2xl:text-base font-semibold font-['Inter'] mt-0">NEW</h5>
+                    </div>
+                    <div id="b3" class="cursor-pointer flex flex-col justify-center items-center gap-0">
+                        <img src="../images/EBikewBG6.png" class="w-40 2xl:w-56">
+                        <h3 class="text-black text-xl 2xl:text-2xl font-medium font-['Mohave'] mt-0">EVO GEN+ </h3>
+                    </div>
+                    <div id="b4" class="cursor-pointer flex flex-col justify-center items-center gap-0">
+                        <img src="../images/EBikewBG7.png" class="w-40 2xl:w-56">
+                        <h3 class="text-black text-xl 2xl:text-2xl font-medium font-['Mohave'] mt-0">RENTAL SCOOTER</h3>
+                    </div>
+                </div>
+            </div>
+            <div id="Option" class="w-4/7 h-auto flex justify-center items-start gap-5">
+                <div id="Op1" class="flex flex-col justify-start items-start gap-5 text-black text-xl 2xl:text-2xl font-medium font-['Mohave']">
+                    <h2 class="text-black text-2xl 2xl:text-3xl font-medium font-['Mohave']">Ownership</h2>
+                    <h3 class="cursor-pointer">EV.GO Electric Store</h3>
+                    <h3 class="cursor-pointer">2000 Stores</h3>
+                    <h3 class="cursor-pointer">Accessories</h3>
+                    <h3 class="cursor-pointer">Community</h3>
+                    <h3 class="cursor-pointer">Hyperservice</h3>
+                    <h3 class="cursor-pointer">Battery Warranty</h3>
+                    <h3 class="cursor-pointer">Rental Business</h3>
+                </div>
+                <div id="Op2" class="flex flex-col justify-start items-start gap-5 text-black text-xl 2xl:text-2xl font-medium font-['Mohave']">
+                    <h2 class="text-black text-2xl 2xl:text-3xl font-medium font-['Mohave']">Products</h2>
+                    <h3 class="cursor-pointer">EVO 10S</h3>
+                    <h3 class="cursor-pointer">EVO 20A</h3>
+                    <h3 class="cursor-pointer">EVO 50X</h3>
+                    <h3 class="cursor-pointer">EVO GEN+</h3>
+                    <h3 class="cursor-pointer">EVO COMET</h3>
+                    <h3 class="cursor-pointer">RENTAL SCOOTERS</h3>
+                </div>
+                <div id="Op3" class="flex flex-col justify-start items-start gap-4 text-black text-2xl 2xl:text-3xl font-medium font-['Mohave']">
+                    <h2 class="text-black text-2xl 2xl:text-3xl font-medium font-['Mohave']">Contact Us</h2>
+                    <h3 id="GI" class="cursor-pointer">General Inquiry</h3>
+                    <h3 id="SI" class="cursor-pointer">Service Inquiry</h3>
+                    <h3 id="CS" class="cursor-pointer">Customer Support</h3>
+                </div>
+                <div id="Op4" class="flex flex-col justify-start items-start">
+                    <svg id="menuClose1" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path fill="rgba(1, 141, 148, 1)" fill-rule="evenodd" d="M420.48 121.813L390.187 91.52L256 225.92L121.813 91.52L91.52 121.813L225.92 256L91.52 390.187l30.293 30.293L256 286.08l134.187 134.4l30.293-30.293L286.08 256z"/></svg>
+                </div>
+            </div>
+        </div> 
+
+        <div id="menuSection2" class="w-4/6 bg-white/70 lg:hidden flex flex-col justify-start items-start fixed z-50 top-[4.5rem] right-0 h-auto border-l border-white shadow-lg backdrop-blur-[5px] px-5 py-4 z-50 gap-2 translate-x-full opacity-0 transition-all duration-400">
+            <ul class="w-full flex flex-col items-start justify-start gap-6 text-black text-2xl font-normal font-['Mohave'] cursor-pointer text-left px-5 py-4 border-b-2 border-black">
+                <li id="HOME1"     class="text-black font-semibold font-mohave cursor-pointer">HOME</li>
+                <li id="PRODUCT1"  class="cursor-pointer">PRODUCT</li>
+                <li id="GALLERY1"  class="cursor-pointer">GALLERY</li>
+                <li id="CONTACT1"  class="cursor-pointer">CONTACT</li>
+            </ul>
+            <ul class="w-full flex flex-col items-start justify-start gap-4 text-black text-2xl font-normal font-['Mohave'] cursor-pointer text-left px-5 py-4">
+                <li id="GI1"     class="text-black font-semibold font-mohave cursor-pointer">General Inquiry</li>
+                <li id="SI1"     class="text-black font-semibold font-mohave cursor-pointer">Service Inquiry</li>
+                <li id="CS1"     class="text-black font-semibold font-mohave cursor-pointer">Customer Support</li>
+            </ul>
+            <div class="w-[90%] flex self-center flex-col border border-black py-5 gap-4 rounded-3xl">
+                <div id="b5" class="cursor-pointer flex flex-col justify-center items-center gap-0">
+                    <img src="../images/EBikewBG4.png" class="w-32">
+                    <h3 class="text-black text-xl font-medium font-['Mohave'] mt-0">EVO 50X</h3>
+                    <h5 class="text-teal-500 text-xs font-semibold font-['Inter'] mt-0">NEW</h5>
+                </div>
+                <div id="b6" class="cursor-pointer flex flex-col justify-center items-center gap-0">
+                    <img src="../images/EBikewBG5.png" class="w-32">
+                    <h3 class="text-black text-xl font-medium font-['Mohave'] mt-0">EVO COMET</h3>
+                    <h5 class="text-teal-500 text-xs font-semibold font-['Inter'] mt-0">NEW</h5>
+                </div>
+            </div>
+        </div>
+
+        <div id="main1" class="w-full h-auto m-0 relative px-4 sm:px-6 lg:px-12 xl:px-20 2xl:px-24">
+            <nav class="relative z-10 bg-white lg:bg-transparent w-full hidden lg:flex items-center justify-between py-3 lg:py-10 xl:py-6 2xl:py-16 pt-5 lg:pt-0 px-6 lg:px-0 shadow-[0px_4px_4px_0px_rgba(0,0,0,0.20)] lg:shadow-none">
+                <div id="icon" class="flex items-center gap-2">
+                    <a href="../index.html"><img class="w-24 sm:w-28 md:w-32 xl:w-20 2xl:w-28" src="../images/LOGO.png" alt="Logo"></a>
+                    <svg id="BackBTN" class="w-4 sm:w-6 md:w-8 lg:w-10 xl:w-12 2xl:w-16] h-4 sm:h-6 md:h-8 lg:h-10 xl:h-12 2xl:h-16 bg-[rgb(82,222,229)] rounded-full p-3 cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="20" stroke-dashoffset="20" d="M21 12h-17.5"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.2s" values="20;0"/></path><path stroke-dasharray="12" stroke-dashoffset="12" d="M3 12l7 7M3 12l7 -7"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.2s" dur="0.2s" values="12;0"/></path></g></svg>
+                </div>
+                <ul class="ml-auto flex items-center justify-center gap-24 text-black text-lg lg:text-xl font-normal font-['Mohave'] cursor-pointer">
+                    <li id="HOME2"     class="cursor-pointer">HOME</li>
+                    <li id="PRODUCT2"  class="cursor-pointer text-black font-semibold font-mohave">PRODUCT</li>
+                    <li id="GALLERY2"  class="cursor-pointer">GALLERY</li>
+                    <li id="CONTACT2"  class="cursor-pointer">CONTACT</li>
+                    <svg id="menuBar1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="cursor-pointer w-5 sm:w-6 md:w-7 lg:w-5 xl:w-6 2xl:w-8"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path class="fill-teal-600 hover:fill-teal-700" d="M20 17.5a1.5 1.5 0 0 1 .144 2.993L20 20.5H4a1.5 1.5 0 0 1-.144-2.993L4 17.5zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 0 1 0-3zm0-7a1.5 1.5 0 0 1 0 3H4a1.5 1.5 0 1 1 0-3z"/></g></svg>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="main2" class="w-full h-auto flex flex-col lg:flex-row xl:flex-row 2xl:flex-row justify-center items-start gap-10 lg:gap-5 px-4 lg:px-8 xl:px-10 2xl:px-12 py-10 relative">
+            <div id="box1" class="w-full lg:w-[54%] xl:w-[54%] 2xl:w-[54%] h-auto flex justify-between lg:justify-center items-center gap-1 lg:gap-4 xl:gap-5 2xl:gap-6 lg:sticky top-10 lg:top-14 xl:top-14 2xl:top-20">
+                <div id="pros" class="w-auto lg:w-1/8 h-auto flex flex-col justify-center items-center gap-3">
+                    <img id="Pro1" class="w-10 lg:w-20 h-10 lg:h-20 rounded-md lg:rounded-2xl cursor-pointer overflow-hidden bg-white"   src="../images/EBikewBG4.png"      ></img>
+                    <img id="Pro2" class="w-10 lg:w-20 h-10 lg:h-20 rounded-md lg:rounded-2xl cursor-pointer overflow-hidden"            src="../images/EBikew-With-BG1.png"></img>
+                    <img id="Pro3" class="w-10 lg:w-20 h-10 lg:h-20 rounded-md lg:rounded-2xl cursor-pointer overflow-hidden"            src="../images/EBikew-With-BG2.png"></img>
+                    <img id="Pro4" class="w-10 lg:w-20 h-10 lg:h-20 rounded-md lg:rounded-2xl cursor-pointer overflow-hidden"            src="../images/EBikew-With-BG3.png"></img>
+                    <img id="Pro5" class="w-10 lg:w-20 h-10 lg:h-20 rounded-md lg:rounded-2xl cursor-pointer overflow-hidden"            src="../images/EBikew-With-BG4.png"></img>
+                </div>
+                <div id="pro" class="w-4/5 lg:w-7/8 h-auto flex flex-col justify-center items-center gap-4 pl-0 lg:pl-18 xl:pl-20 2xl:pl-24 px-0">
+                    <img id="MainPro" src="../images/EBikewBG4.png" class="w-48 lg:w-80 xl:w-96 2xl:w-full h-48 lg:h-80 xl:h-96 2xl:h-full rounded-2xl"></img>
+                    <h3 class="text-black text-[8px] lg:text-base font-semibold font-['Inter']">Tap to see more</h3>
+                    <div id="buttons" class="w-full lg:w-auto flex gap-1 lg:gap-4 xl:gap-5 2xl:gap-5">
+                        <button id="GI1" class="w-1/2 lg:w-auto rounded-lg lg:rounded-2xl shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] border-2 border-[rgb(0,175,184)] text-black text-sm lg:text-sm xl:text-base 2xl:text-base font-medium font-['Mohave'] px-1 lg:px-3 xl:px-7 2xl:px-8 py-1 lg:py-3 xl:py-2 2xl:py-2">GENERAL INQUIRY</button>
+                        <button class="w-1/2 lg:w-auto bg-[radial-gradient(ellipse_190.45%_6301.96%_at_0.00%_-0.00%,_#BFF0F3_1%,_#00AFB8_100%)] rounded-lg lg:rounded-xl shadow-[3px_3px_14px_0px_rgba(0,0,0,0.25)] px-2 lg:px-8 xl:px-12 2xl:px-12 py-1 lg:py-2 text-black text-sm lg:text-base font-semibold font-['Mohave']">BOOK NOW</button>
+                    </div>
+                </div>
+            </div>
+            <div id="box2" class="w-full lg:w-[46%] h-auto flex flex-col justify-start items-start pr-0 gap-3 px-0">
+                <h1 class="text-black text-4xl font-semibold font-['Mohave'] border-b border-gray-400 pb-1 hidden lg:block">EVO 50X / EVO 50X PRO <br>EV.GO – The Future of Urban Mobility</h1>
+                <h1 class="text-black text-3xl font-semibold font-['Mohave'] flex lg:hidden justify-center items-center flex-col leading-4">EVO 50X / EVO 50X PRO <h2 class="text-2xl font-['Mohave'] font-semibold border-b border-gray-400 pb-1 tracking-tight">EV.GO – The Future of Urban Mobility</h2></h1>
+                <div id="pur" class="w-full h-auto flex flex-col justify-start items-start border-b border-gray-400 pb-2">
+                    <h3 class="text-black text-2xl font-medium font-['Mohave'] tracking-tight lg:tracking-normal">Rs.99,820-1.30Lakh</h3>
+                    <h5 class="text-black text-xs font-medium font-['Inter'] -mt-1">Inclusive of all taxes</h5>
+                    <h4 class="text-black text-sm lg:text-base font-semibold font-['Inter'] flex flex-col lg:flex-row gap-2">EMI starts at ₹5,891. No Cost EMI available <span class="text-teal-400 text-sm lg:text-base font-semibold font-['Inter'] cursor-pointer flex justify-start items-center">EMI Options<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#000" d="m7 10l5 5l5-5z"/></svg></span></h4>
+                </div>
+                <div id="offer" class="w-full h-auto flex flex-col justify-start items-start border-b border-gray-400 pb-4 gap-2">
+                    <h3 class="w-full h-auto text-black text-base font-semibold font-['Inter'] flex justify-start items-center gap-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="transparent"stroke="#000" d="m20.749 12l1.104-1.908a1 1 0 0 0-.365-1.366l-1.91-1.104v-2.2a1 1 0 0 0-1-1h-2.199l-1.103-1.909a1 1 0 0 0-.607-.466a1 1 0 0 0-.759.1L12 3.251l-1.91-1.105a1 1 0 0 0-1.366.366L7.62 4.422H5.421a1 1 0 0 0-1 1v2.199l-1.91 1.104a1 1 0 0 0-.365 1.367L3.25 12l-1.104 1.908a1.004 1.004 0 0 0 .364 1.367l1.91 1.104v2.199a1 1 0 0 0 1 1h2.2l1.104 1.91a1.01 1.01 0 0 0 .866.5c.174 0 .347-.046.501-.135l1.908-1.104l1.91 1.104a1 1 0 0 0 1.366-.365l1.103-1.91h2.199a1 1 0 0 0 1-1v-2.199l1.91-1.104a1 1 0 0 0 .365-1.367zM9.499 6.99a1.5 1.5 0 1 1-.001 3.001a1.5 1.5 0 0 1 .001-3.001m.3 9.6l-1.6-1.199l6-8l1.6 1.199zm4.7.4a1.5 1.5 0 1 1 .001-3.001a1.5 1.5 0 0 1-.001 3.001"/></svg>Offers</h3>
+                    <div id="off-Box" class="w-full h-18 lg:h-28 xl:h-32 2xl:h-40 flex justify-center items-center gap-1 lg:gap-2 xl:gap-3 2xl:gap-3 pr-0 lg:pr-6 xl:pr-12 2xl:pr-12">
+                        <div id="con1" class="w-1/3 h-full px-2 py-2 flex flex-col justify-start items-start border border-[rgb(0,175,184)] rounded-xl">
+                            <h5 class="text-black text-[10px] lg:text-xs font-semibold font-['Inter']">Cashback</h5>
+                            <h5 class="text-black text-[10px] lg:text-xs font-semibold font-['Inter']">Get 5% back with Amazon Pay ICICI Bank credit card for Prime members. 3% back for others.</h5>
+                        </div>
+                        <div id="con2" class="w-1/3 h-full px-2 py-2 flex flex-col justify-start items-start border border-[rgb(0,175,184)] rounded-xl">
+                            <h5 class="text-black text-[10px] lg:text-xs font-semibold font-['Inter']">No Cost EMI</h5>
+                            <h5 class="text-black text-[10px] lg:text-xs font-semibold font-['Inter']">Upto ₹1,756.09 EMI interest savings on mini Pay IaIabank… 1 offer</h5>
+                        </div>
+                        <div id="con3" class="w-1/3 h-full px-2 py-2 flex flex-col justify-start items-start border border-[rgb(0,175,184)] rounded-xl">
+                            <h5 class="text-black text-[10px] lg:text-xs font-semibold font-['Inter']">Student Special Offer</h5>
+                            <h5 class="text-black text-[10px] lg:text-xs font-semibold font-['Inter']">Get 15% OFF on all EV.go scooter and  rentals with your student ID!</h5>
+                        </div>  
+                    </div>
+                </div>
+                <div id="specs" class="w-full h-auto flex justify-center items-center pb-3">
+                    <div id="spec1" class="w-1/4 h-auto flex flex-col justify-start items-center gap-1 pt-4 -mt-4">
+                        <img src="../SVG/PowerBoost.svg" alt="">
+                        <h5 class="text-center text-black text-xs font-semibold font-['Inter'] leading-0">Powerful Electric Motor</h5>
+                    </div>
+                    <div id="spec2" class="w-1/4 h-auto flex flex-col justify-start items-center gap-1 -mt-4">
+                        <img src="../SVG/BatteryLimit.svg" alt="">
+                        <h5 class="text-center text-black text-xs font-semibold font-['Inter']">long Battery Life</h5>
+                    </div>
+                    <div id="spec3" class="w-1/4 h-auto flex flex-col justify-start items-center gap-1 -mt-4">
+                        <img src="../SVG/BatteryPower.svg" alt="">
+                        <h5 class="text-center text-black text-xs font-semibold font-['Inter']">Fast Charging</h5>
+                    </div>
+                    <div id="spec4" class="w-1/4 h-auto flex flex-col justify-start items-center gap-1 -mt-4">
+                        <img src="../SVG/Modes.svg" alt="">
+                        <h5 class="text-center text-black text-xs font-semibold font-['Inter']">Smart Dashboard</h5>
+                    </div>
+                </div>
+                <div id="varients" class="w-full h-auto flex flex-col justify-start items-start gap-3">
+                    <h4 class="flex gap-1 text-black text-base font-semibold font-['Inter']"><img src="../SVG/Var-Plus.svg" alt="">Choose a Variant</h4>
+                    <div id="vars" class="w-full h-auto flex justify-start items-center gap-5">
+                        <div id="var1" class="cursor-pointer w-32 h-auto flex flex-col justify-center items-center bg-[linear-gradient(to_bottom,_#00AFB8,_#FFFFFFFF)] rounded-xl">
+                            <img src="../images/EBikewBG4.png" alt="">
+                            <h4 class="text-black text-base font-semibold font-['Mohave'] -mt-4">EVO50X</h4>
+                            <h5 class="text-black text-[10px] font-semibold font-['Inter']">Rs.99,720*</h5>
+                        </div>
+                        <div id="var2" class="cursor-pointer w-32 h-auto flex flex-col justify-center items-center bg-[linear-gradient(to_bottom,_#00AFB8,_#FFFFFFFF)] rounded-xl">
+                            <img src="../images/EBikewBG4.png" alt="">
+                            <h4 class="text-black text-base font-semibold font-['Mohave'] -mt-4">EVO50X PRO</h4>
+                            <h5 class="text-black text-[10px] font-semibold font-['Inter']">Rs.1,30,200*</h5>
+                        </div>
+                    </div>
+                </div>
+                <div id="var-colors" class="w-full h-auto flex flex-col justify-start items-start gap-3 pb-4 border-b border-gray-400">
+                    <h4 class="flex gap-1 text-black text-base font-semibold font-['Inter']"><img src="../SVG/Var-Plus.svg" alt="">Color :</h4>
+                    <div id="colors" class="w-full h-auto flex justify-start items-center gap-5">
+                        <div id="color1" class="cursor-pointer w-32 h-auto flex flex-col justify-center items-center rounded-xl">
+                            <img src="../images/EBikewBG4.png" alt="">
+                            <h4 class="text-black text-base font-semibold font-['Mohave']">White </h4>
+                        </div>
+                        <div id="color2" class="cursor-pointer w-32 h-auto flex flex-col justify-center items-center rounded-xl">
+                            <img src="../images/EBikewBG4_1.png" class="w-32">
+                            <h4 class="text-black text-base font-semibold font-['Mohave']">Matte Gray</h4>
+                        </div>
+                        <div id="color3" class="cursor-pointer w-32 h-auto flex flex-col justify-center items-center rounded-xl">
+                            <img src="../images/EBikewBG4_2.png" class="w-32">
+                            <h4 class="text-black text-base font-semibold font-['Mohave']">Matte Black</h4>
+                        </div>
+                    </div>
+                </div>
+                <div id="About" class="w-full h-auto flex flex-col justify-start items-start gap-2 pb-3 border-b border-gray-400">
+                    <h3 class="text-black text-base font-semibold font-['Inter']">About this item</h3>
+                    <ul class="text-black text-xs font-medium font-['Inter'] list-disc pl-7">
+                        <li>The EV.go EVO 50X  is a compact, eco-friendly electric scooter built for city commuters and tech-savvy riders. With its matte white finish accented by blue LED highlights, it’s not just a ride—it’s a statement of modern mobility.</li>
+                        <li>Futuristic Design: <br> Clean lines and a compact frame make this scooter visually striking and highly functional.</li>
+                        <li>Integrated LED Lights: <br> Circular front headlight and glowing wheel rims not only look cool but enhance visibility and safety during night rides.</li>
+                        <li>Smart Storage Panel: <br> The side panel includes a hidden compartment perfect for storing essentials like a charger or documents.</li>
+                        <li>Ergonomic Handlebar & Seat: <br> Built for comfort over short to mid-range distances.</li>
+                        <li>Disc Brakes: <br> Front and rear disc brakes offer excellent stopping power.</li>
+                        <li>Eco-Friendly Performance: <br> Electric motor for zero-emission rides with smooth acceleration.</li>
+                    </ul>
+                    <h3 class="text-black text-xs font-semibold font-['Inter']">IDEAL FOR:</h3>
+                    <ul class="text-black text-xs font-medium font-['Inter'] list-disc pl-7">
+                        <li>Urban commuters, students, delivery riders, and anyone looking for a clean and stylish way to get around the city...</li>
+                    </ul>
+                    <h3 class="w-34 cursor-pointer flex gap-1 text-teal-500 text-xs font-medium font-['Inter']">See more product details <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path fill="none" class="w-auto stroke-teal-500" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m9 5l6 7l-6 7"/></svg></h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="main3" class="w-full h-auto flex flex-col justify-center items-center gap-10 px-2 lg:px-8 xl:px-10 2xl:px-12 py-10">
+            <div id="block1" class="w-full h-auto flex flex-col lg:flex-row justify-center items-center px-2 lg:px-8 xl:px-10 2xl:px-12 gap-5">
+                <div id="Blo1" class="w-full lg:w-2/3 h-auto flex flex-col justify-start items-start">
+                    <h3 class="text-black text-2xl font-semibold font-['Mohave']">Add More Accessories</h3>
+                    <div id="accessories" class="flex justify-start lg:justify-center items-center gap-0">
+                        <div id="access1" class="w-32 lg:w-56 h-auto lg:h-full flex flex-col lg:justify-center lg:items-start gap-1">
+                            <div id="AccessImg" class="w-32 lg:w-56 h-32 lg:h-54 xl:h-56 2xl:h-60 flex justify-end items-start p-1 lg:p-4 xl:p-5 2xl:p-5 rounded-lg lg:rounded-2xl border border-black bg-[url('../images/Access1.png')] bg-cover bg-center bg-no-repeat">
+                                <input type="checkbox" data-price="2000" name="" id="checkbox" class="w-4 h-4 lg:w-4 lg:h-4 xl:w-5 xl:h-5 2xl:w-5 2xl:h-5 custom-checkbox">
+                            </div>
+                            <h4 class="text-stone-900 text-xs font-semibold font-['Inter']">Foot Rest, Engineered for comfort and convenience, the EV.go Foldable Foot Rest provides extra support for longer rides or pillion comfort.</h4>
+                            <h3 class="text-teal-600 text-xs font-semibold font-['Inter']">Price: ₹2000/-</h3>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 mt-28" width="24" height="24" viewBox="0 0 24 24"><path fill="#000" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></svg>
+                        <div id="access2" class="w-32 lg:w-56 h-auto lg:h-full flex flex-col lg:justify-center lg:items-start gap-1">
+                            <div id="AccessImg" class="w-32 lg:w-56 h-32 lg:h-48 xl:h-56 2xl:h-60 flex justify-end items-start p-1 lg:p-4 xl:p-5 2xl:p-5 rounded-lg lg:rounded-2xl border border-black bg-[url('../images/Access2.png')] bg-cover bg-center bg-no-repeat">
+                                <input type="checkbox" data-price="1200" name="" id="checkbox" class="w-4 h-4 lg:w-4 lg:h-4 xl:w-5 xl:h-5 2xl:w-5 2xl:h-5 custom-checkbox">
+                            </div>
+                            <h4 class="text-stone-900 text-xs font-semibold font-['Inter']">Riding Helmet, Ride safe and look sharp with the EV.go Smart Riding Helmet. Designed with high-impact resistance, aerodynamic airflow vents.</h4>
+                            <h3 class="text-teal-600 text-xs font-semibold font-['Inter']">Price: ₹1200/-</h3>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-10 mt-28 hidden lg:flex" width="24" height="24" viewBox="0 0 24 24"><path fill="#000" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></svg>
+                        <div id="access3" class="w-56 h-full lg:flex flex-col lg:justify-center lg:items-start gap-1 hidden">
+                            <div id="AccessImg" class="w-32 lg:w-56 h-32 lg:h-48 xl:h-56 2xl:h-60 flex justify-end items-start p-1 lg:p-4 xl:p-5 2xl:p-5 rounded-lg lg:rounded-2xl border border-black bg-[url('../images/Access3.png')] bg-cover bg-center bg-no-repeat">
+                                <input type="checkbox" data-price="999" name="" id="checkbox" class="w-4 h-4 lg:w-4 lg:h-4 xl:w-5 xl:h-5 2xl:w-5 2xl:h-5 custom-checkbox">
+                            </div>
+                            <h4 class="text-stone-900 text-xs font-semibold font-['Inter']">EV.GO Utility Bag, Compact, durable, and stylish — the EV.go Smart Utility Bag is perfect for carrying your charger, tools, or daily essentials.</h4>
+                            <h3 class="text-teal-600 text-xs font-semibold font-['Inter']">Price: ₹999/-</h3>
+                        </div>
+                    </div>
+                </div>
+                <div id="Blo2" class="lg:w-1/3 h-auto flex flex-col justify-center items-center gap-2">
+                    <h3 id="totalPrice" class="text-black text-xl font-semibold font-['Mohave']">Total price: ₹0.00</h3>
+                    <button id="checkboxBtn" class="w-44 sm:w-48 md:w-52 lg:w-60 xl:w-64 2xl:w-64 px-5 py-2 bg-[radial-gradient(ellipse_121.74%_3961.43%_at_36.60%_50.00%,_#95F9FF_1%,_#00AFB8_100%)] rounded-[20px] shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] inline-flex justify-center items-center text-black text-base font-semibold font-['Mohave']">Added 0 to Cart</button>
+                    <h5 class="text-black text-xs font-medium font-['Inter']">Delivery times may vary for different items.</h5>
+                </div>
+            </div>
+            <div id="block2" class="w-full h-auto hidden lg:flex justify-center items-center px-2 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12">
+                <div id="div1" class="w-1/4 h-auto flex flex-col justify-center items-start text-black text-sm font-medium font-['Inter']">
+                    <h4 class="w-full h-6 border-b border-gray-400">Sales Package</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Charger</h4>
+                    <h4 class="w-full h-6 text-base font-semibold">General</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Brand</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Model Name</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Model Year</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Brand Color</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Type</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Color</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Motor Type</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Body Material</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Wheel Material</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Number of Wheels</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Seating Capacity</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Transmission Type</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Maximum Torque</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Maximum Speed</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Range</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Console Features</h4>
+                    <h4 class="w-full h-6">Tail Lamp</h4>
+                </div>
+                <div id="div2" class="w-1/4 h-auto flex flex-col justify-center items-start text-black text-sm font-medium font-['Inter'] mr-2">
+                    <h4 class="w-full h-6 border-b border-gray-400">Tool Kit, Manual And Charger</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Portable Charger</h4>
+                    <br>
+                    <h4 class="w-full h-6 border-b border-gray-400 mt-1">Ev.go</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Evo 50x</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">2025</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">White</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Electric Scooter</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">White, matte black, matte gray</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Brushless DC Hub Motor</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Plastic+fiber</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Steel</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">2</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">1</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Non Gear</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">20 nm</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">80 km/h</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">100 km</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">LED</h4>
+                    <h4 class="w-full h-6">LED</h4>
+                </div>
+                <div id="div3" class="w-1/4 h-auto flex flex-col justify-center items-start text-black text-sm font-medium font-['Inter'] ml-2  -mt-1">
+                    <h4 class="w-full h-6 text-base font-semibold">Power Features</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Number of Batteries</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Power Source</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Battery Size</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Battery Type</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Battery Capacity</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Motor Power</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Charging Time</h4>
+                    <h4 class="w-full h-6 text-base font-semibold">Wheel And Tire Features</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Tire Type</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Wheel Type</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Tire(Front)</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Tire Size(Rear)</h4>
+                    <h4 class="w-full h-6 text-base font-semibold">Brake Features</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Brake (Front)</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Brake (Rear)</h4>
+                    <h4 class="w-full h-6 text-base font-semibol">Suspension</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Suspension (Front)</h4>
+                    <h4 class="w-full h-6">Suspension (Rear)</h4>
+                    <br>
+                </div>
+                <div id="div4" class="w-1/4 h-auto flex flex-col justify-start items-start text-black text-sm font-medium font-['Inter'] mt-5">
+                    <h4 class="w-full h-6 border-b border-gray-400">1</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Battery</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">4.3KWH</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">NMC Li-ion</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">4.3 Kwh</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">450 Watt</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">7-8 hr</h4>
+                    <br>
+                    <h4 class="w-full h-6 border-b border-gray-400 mt-1">Tubeless</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Alloy Wheel</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400"> 15 inch</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">15 inch</h4>
+                    <br>
+                    <h4 class="w-full h-6 border-b border-gray-400 mt-1">Disk Brake</h4>
+                    <h4 class="w-full h-6 border-b border-gray-400">Disk Brake</h4>
+                    <br>
+                    <h4 class="w-full h-6 border-b border-gray-400 mt-1">Telescopic Fork</h4>
+                    <h4 class="w-full h-6">DualShock</h4>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+        <div id="main4" class="w-full h-auto flex flex-col justify-center items-center gap-5 px-4 lg:px-18 xl:px-20 2xl:px-24 py-10">
+            <div class="w-full h-36 lg:h-96 relative bg-gradient-to-l from-slate-800 to-slate-500 rounded-lg lg:rounded-2xl overflow-hidden">
+                <div class="w-full h-full absolute bg-gradient-to-t from-slate-1000 via-slate-500 to-sky-400 opacity-50"></div>
+                <div class="w-full h-full absolute bg-gradient-to-t from-slate-800 via-slate-950 via-transparent to-transparent"></div>
+                <div class="w-64 h-64 -mt-8 -ml-24 absolute opacity-50 bg-gradient-to-l from-white to-blue-950 rounded-full blur-[10.20px]"></div>
+                <div class="w-64 h-64 mt-32 ml-[830px] absolute opacity-50 bg-gradient-to-br from-teal-500 to-blue-950 rounded-full blur-md"></div>
+                <img class="absolute z-10 ml-[25%] lg:ml-[27.5%] mt-4 lg:mt-8 w-48 h-32 lg:w-auto lg:h-auto" src="../images/EBikewBG4_1.1.png">
+                <div class="ml-[90%] -mt-4 lg:mt-2 absolute justify-center text-black text-xs lg:text-3xl font-normal font-['Alumni_Sans_Inline_One'] leading-[55.68px]">EV.GO!</div>
+                <div class="w-auto ml-2 lg:ml-8 mt-[38%] lg:mt-[30%] absolute justify-center text-gray-200 text-[8px] lg:text-xl font-semibold font-['Mohave']">The Future of Urban Mobility</div>
+                <div class=" ml-[28%] lg:ml-[30%] mt-4 absolute justify-center text-white text-4xl lg:text-8xl font-bold font-['Mohave'] lg:leading-[167.04px] tracking-[10px] lg:tracking-[32.64px] [text-shadow:_0px_4px_4px_rgb(0_0_0_/_0.25)]">EVO 50X</div>
+            </div>
+            <div id="blocks" class="w-full h-auto flex flex-col lg:flex-row justify-center items-center gap-5 px-0 lg:px-0 xl:px-0 2xl:px-0">
+                <img src="../images/EBikew-With-BG1-Chat.png" class="lg:w-1/2 h-auto lg:h-80 rounded-2xl">
+                <img src="../images/EBikew-With-BG2-Chat.png" class="lg:w-1/2 h-auto lg:h-80 rounded-2xl">
+            </div>
+        </div>
+
+        <div id="main5" class="w-full h-auto flex justify-center items-center bg-[rgb(38,50,56)] px-0 font-['MOHAVE',sans-serif]">
+            <div id="Contact" class="w-full h-full grid grid-cols-2 lg:flex justify-center lg:items-start px-4 lg:px-10 gap-14 lg:gap-24 py-5 pt-5 lg:py-10 text-slate-300">
+                <div id="WebName" class="w-1/9 h-auto hidden lg:flex text-white text-3xl font-normal font-['Alumni_Sans_Inline_One'] -mt-1">EV.GO!</div>
+                <div id="ConProduct" class="flex flex-col text-stone-300 text-base font-medium font-['Mohave'] gap-2 text-center lg:text-start">
+                    <div id="title" class="text-white text-xl font-medium font-['Mohave']">Products</div>
+                    <div id="ConPro" class="cursor-pointer mt-3">EVO 10</div>
+                    <div id="ConPro" class="cursor-pointer">EVO 10 PRO</div>
+                    <div id="ConPro" class="cursor-pointer">EVO 20</div>
+                    <div id="ConPro" class="cursor-pointer">EVO 20+</div>
+                    <div id="ConPro" class="cursor-pointer">EVO GENA</div>
+                    <div id="ConPro" class="cursor-pointer">EVO GEN+</div>
+                    <div id="ConPro" class="cursor-pointer">EVO COMET </div>
+                    <div id="ConPro" class="cursor-pointer">RENTAL SCOOTERS </div>
+                </div>
+                <div id="ConTandD" class="flex flex-col text-stone-300 text-base font-medium font-['Mohave'] gap-2 text-center lg:text-start">
+                    <div id="title" class="text-white text-xl font-medium font-['Mohave']">Tech & Design</div>
+                    <div id="TD" class="cursor-pointer">Software</div>
+                    <div id="TD" class="cursor-pointer">APP</div>
+                    <div id="TD" class="cursor-pointer">Manufacturing</div>
+                    <div id="TD" class="cursor-pointer">Design</div>
+                    <div id="TD" class="cursor-pointer">Future Factory</div>
+                </div>
+                <div id="ConOS" class="flex flex-col text-stone-300 text-base font-medium font-['Mohave'] gap-2 text-center lg:text-start">
+                    <div id="title" class="text-white text-xl font-medium font-['Mohave']">Ownership</div>
+                    <div id="os" class="cursor-pointer">EV.GO Electric Store</div>
+                    <div id="os" class="cursor-pointer">4000 Stores</div>
+                    <div id="os" class="cursor-pointer">Accessories</div>
+                    <div id="os" class="cursor-pointer">Community</div>
+                    <div id="os" class="cursor-pointer">Hyperservice</div>
+                    <div id="os" class="cursor-pointer">Battery Warranty</div>
+                    <div id="os" class="cursor-pointer">RENTAL BUSINESS</div>
+                </div>
+                <div id="ConCompany" class="flex flex-col text-stone-300 text-base font-medium font-['Mohave'] gap-2 text-center lg:text-start">
+                    <div id="title" class="text-white text-xl font-medium font-['Mohave']">Company</div>
+                    <div id="ConCom" class="cursor-pointer">About Us</div>
+                    <div id="ConCom" class="cursor-pointer">Investor</div>
+                    <div id="ConCom" class="cursor-pointer">Blogs</div>
+                    <div id="ConCom" class="cursor-pointer">Careers</div>
+                </div>
+                <div id="Extra" class="w-full lg:w-52 flex flex-col justify-center items-center lg:items-start gap-3 col-span-2">
+                    <div id="WebName" class="w-full h-auto flex justify-center items-center lg:hidden text-white text-3xl font-normal font-['Alumni_Sans_Inline_One'] text-center">EV.GO!</div>
+                    <div id="iconsList" class="flex justify-between items-center gap-5 lg:gap-3">
+                      <img src="../SVG/Instagram.svg" class="w-6">
+                      <img src="../SVG/YoutubeSVG.svg" class="w-6">
+                      <img src="../SVG/TwitterSVG.svg" class="w-6">
+                      <img src="../SVG/FaceBook.svg" class="w-4">
+                      <img src="../SVG/LinkedIn.svg" class="w-6">
+                    </div>
+                    <div id="Context" class="text-white text-md lg:text-sm font-medium font-['Mohave'] text-center lg:text-start">The EV.GO rental scooter app is coming soon to Play Store and the App Store.</div>
+                    <div id="imgList" class="flex justify-start items-center gap-4">
+                        <img src="../images/PlayStore.png" class="w-10">
+                        <img src="../images/AppStore.png" class="w-10">
+                    </div>
+                    <div id="Context" class="text-stone-300 text-sm font-medium font-['Mohave'] text-center lg:text-start">Stay tuned for a smarter, greener, and more convenient ride</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERLAY -->
+        <div id="menuOverlay" class="fixed inset-0 bg-black/50 opacity-0 pointer-events-none transition-opacity duration-500 z-40 hidden lg:block"></div>
+
+        <div id="menuOverlay2"
+             class="fixed inset-0 bg-black/40 opacity-0 pointer-events-none transition-opacity duration-300 z-40 block lg:hidden">
+        </div>
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="Pro.js" type="module" sync defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js" sync defer></script>
+        <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js" sync defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@2.3.0/dist/iconify-icon.min.js" sync defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js" integrity="sha512-lYMiwcB608+RcqJmP93CMe7b4i9G9QK1RbixsNu4PzMRJMsqr/bUrkXUuFzCNsRUo3IXNUr5hz98lINURv5CNA==" crossorigin="anonymous" referrerpolicy="no-referrer" sync defer></script>
+
+    </body>
+</html>
