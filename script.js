@@ -16,8 +16,8 @@ function getRandom(min, max) {
       this.containerHeight = containerHeight;
 
       this.size = getRandom(15, 20);
-      this.x = (containerWidth - this.size) / 3;
-      this.y = (containerHeight - this.size) / 3;
+      this.x = (containerWidth - this.size) / 2;
+      this.y = (containerHeight - this.size) / 2;
 
       this.vx = getRandom(-0.01, 0.01);
       this.vy = getRandom(-0.01, 0.01);
@@ -79,7 +79,7 @@ function getRandom(min, max) {
 
   function startParticles() {
     const containerWidth = 50;
-    const containerHeight = 60;
+    const containerHeight = 50;
 
     const p1 = new Particle(document.getElementById('circle1'), containerWidth, containerHeight);
     const p2 = new Particle(document.getElementById('circle2'), containerWidth, containerHeight);
@@ -101,6 +101,7 @@ function getRandom(min, max) {
   }
 
   window.onload = startParticles;
+
 
 
 
@@ -774,7 +775,7 @@ colorPallet3.addEventListener('pointerdown', function() {
 
 // JS for Redirection on Click
 // List of all IDs that should redirect
-const redirectIDs = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6'];
+const redirectIDs = ['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'product1', 'product2', 'product3', 'product4', 'product5', 'Product1', 'Product2', 'Product3', 'Product4', 'Product5'];
 const redirectIDs2 = ['GI', 'GI1', 'SYR', 'AV1', 'AV2'];
 const redirectIDs3 = ['SI', 'SI1'];
 const redirectIDs4 = ['CS','NBS', 'CS1'];
