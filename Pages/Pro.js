@@ -246,7 +246,7 @@ Color3.addEventListener('click', function() {
 // List of all IDs that should redirect
 // URL to redirect to
 const redirectIDs = ['b1', 'b2', 'b3', 'b4'];
-const redirectIDs2 = ['GI', 'GI1'];
+const redirectIDs2 = ['GI', 'GI1', 'GI2', 'GI3'];
 const redirectIDs3 = ['SI', 'SI1'];
 const redirectIDs4 = ['CS','NBS', 'CS1'];
 
