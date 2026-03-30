@@ -237,59 +237,116 @@ const wrapper = document.getElementById("products-wrapper");
 const btnLeft = document.getElementById("scrl-left");
 const btnRight = document.getElementById("scrl-right");
 
-let visibleCards = 3;
-let totalCards = wrapper.children.length;
-let maxIndex = totalCards - visibleCards;
+const products = [...wrapper.children];
 
 let currentIndex = 0;
-let cardWidth = 0;
+let visibleCards = 1;
+let maxIndex = 0;
+let cardStep = 0;
 
-function calculateCardWidth() {
-  const firstCard = wrapper.children[0];
-  const style = getComputedStyle(wrapper);
-  const gap = parseInt(style.columnGap || style.gap || 0);
+function getVisibleCards() {
+  const width = window.innerWidth;
 
-  cardWidth = firstCard.offsetWidth + gap;
-  maxIndex = totalCards - visibleCards;
+  if (width >= 1536) return 3; // 2xl
+  if (width >= 1280) return 3; // xl
+  if (width >= 1024) return 2; // lg
+  return 1;
 }
 
-function updateSlider() {
-  const translate = -currentIndex * cardWidth;
+function updateMeasurements() {
+  if (!products.length) return;
 
-  wrapper.style.transition =
-    "transform 0.6s cubic-bezier(0.22,1,0.36,1)";
-  wrapper.style.transform = `translateX(${translate}px)`;
+  const firstCard = products[0];
 
+  const wrapperStyle = getComputedStyle(wrapper);
+  const gap = parseFloat(wrapperStyle.columnGap || wrapperStyle.gap || 0);
+
+  cardStep = firstCard.offsetWidth + gap;
+
+  visibleCards = getVisibleCards();
+
+  maxIndex = Math.max(products.length - visibleCards, 0);
+
+  currentIndex = Math.min(currentIndex, maxIndex);
+
+  moveSlider(false);
   updateArrows();
 }
 
-btnRight.addEventListener("click", () => {
-  if (currentIndex < maxIndex) {
-    currentIndex++;
-    updateSlider();
-  }
-});
+function moveSlider(animate = true) {
+  const translate = -(currentIndex * cardStep);
 
-btnLeft.addEventListener("click", () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-    updateSlider();
+  if (animate) {
+    wrapper.style.transition =
+      "transform 0.6s cubic-bezier(0.22,1,0.36,1)";
+  } else {
+    wrapper.style.transition = "none";
   }
-});
 
-function updateArrows() {
-  btnLeft.style.opacity = currentIndex === 0 ? "0.4" : "1";
-  btnRight.style.opacity = currentIndex === maxIndex ? "0.4" : "1";
+  wrapper.style.transform = `translateX(${translate}px)`;
 }
 
-calculateCardWidth();
-updateSlider();
+function goNext() {
+  if (currentIndex >= maxIndex) return;
 
-window.addEventListener("resize", () => {
-  calculateCardWidth();
-  updateSlider();
+  currentIndex++;
+  moveSlider(true);
+  updateArrows();
+}
+
+function goPrev() {
+  if (currentIndex <= 0) return;
+
+  currentIndex--;
+  moveSlider(true);
+  updateArrows();
+}
+
+function updateArrows() {
+  const isAtStart = currentIndex <= 0;
+  const isAtEnd = currentIndex >= maxIndex;
+
+  btnLeft.style.opacity = isAtStart ? "0.35" : "1";
+  btnLeft.style.pointerEvents = isAtStart ? "none" : "auto";
+
+  btnRight.style.opacity = isAtEnd ? "0.35" : "1";
+  btnRight.style.pointerEvents = isAtEnd ? "none" : "auto";
+}
+
+btnRight.addEventListener("click", goNext);
+btnLeft.addEventListener("click", goPrev);
+
+let startX = 0;
+let isDragging = false;
+
+wrapper.addEventListener("pointerdown", (e) => {
+  startX = e.clientX;
+  isDragging = true;
 });
 
+wrapper.addEventListener("pointerup", (e) => {
+  if (!isDragging) return;
+
+  const diff = startX - e.clientX;
+
+  if (Math.abs(diff) > 60) {
+    if (diff > 0) {
+      goNext();
+    } else {
+      goPrev();
+    }
+  }
+
+  isDragging = false;
+});
+
+wrapper.addEventListener("pointercancel", () => {
+  isDragging = false;
+});
+
+window.addEventListener("resize", updateMeasurements);
+
+updateMeasurements();
 
 
 //JS for Product Viewing for Mobile
