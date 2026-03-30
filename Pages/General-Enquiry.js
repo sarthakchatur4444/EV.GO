@@ -346,39 +346,61 @@ redirectIDs4.forEach(id => {
 
 // JS for Form Submission
 // Form Submission
-document.querySelector("#Content_Form").addEventListener("submit", function(e) {
+document.querySelector("#Content_Form").addEventListener("submit", async function (e) {
+  e.preventDefault();
 
-    e.preventDefault();   // STOP normal form submission
+  const form = document.getElementById("Content_Form");
+  const formData = new FormData(form);
 
-    let form = document.getElementById("Content_Form");
-    let formData = new FormData(form);
-
-    // ---------- 1️⃣ SAVE TO FIREBASE ----------
-    saveContactFormData(
-        formData.get("name"),
-        formData.get("email"),
-        formData.get("phone"),
-        formData.get("state"),
-        formData.get("city"),
-        formData.get("pincode"),
-        formData.get("Model"),
-        formData.get("description"),
-        formData.get("message")
+  try {
+    // 1️⃣ Save to Firebase
+    await saveContactFormData(
+      formData.get("name"),
+      formData.get("email"),
+      formData.get("phone"),
+      formData.get("state"),
+      formData.get("city"),
+      formData.get("pincode"),
+      formData.get("Model"),
+      formData.get("description"),
+      formData.get("message")
     );
 
-    // ---------- 2️⃣ SEND TO PHP ----------
-    fetch("general_enquiry.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert("Saved to Firebase + MySQL successfully!");
-        console.log(data);
-        form.reset();
-    })
-    .catch(error => {
-        console.error("Error:", error);
+    // 2️⃣ Send email using EmailJS
+    await emailjs.send("service_pcfjic4", "template_0hlds1k", {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      state: formData.get("state"),
+      city: formData.get("city"),
+      pincode: formData.get("pincode"),
+      model: formData.get("Model"),
+      description: formData.get("description"),
+      message: formData.get("message"),
+      time: new Date().toLocaleString()
     });
 
+    // 3️⃣ Keep PHP working locally if available
+    try {
+      const response = await fetch("general_enquiry.php", {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        const data = await response.text();
+        console.log("PHP Response:", data);
+      }
+    } catch (phpError) {
+      console.warn("general_enquiry.php not available after deployment:", phpError);
+    }
+
+    // 4️⃣ Success
+    alert("Form submitted successfully!");
+    form.reset();
+
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong while submitting the form.");
+  }
 });

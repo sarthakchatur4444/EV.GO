@@ -435,43 +435,69 @@ redirectIDs4.forEach(id => {
 // Form Submission
 // JS for Form Submission
 // Form Submission
-document.querySelector("#Content_Form").addEventListener("submit", function(e) {
+document.querySelector("#Content_Form").addEventListener("submit", async function (e) {
+  e.preventDefault();
 
-    e.preventDefault();   // STOP normal form submission
+  const form = document.getElementById("Content_Form");
+  const formData = new FormData(form);
 
-    let form = document.getElementById("Content_Form");
-    let formData = new FormData(form);
+  try {
+    // 1️⃣ Save to Firebase
+    await saveContactFormData(
+      formData.get("name"),
+      formData.get("email"),
+      formData.get("phone"),
+      formData.get("state"),
+      formData.get("city"),
+      formData.get("pincode"),
+      formData.get("Model1"),
+      formData.get("modelNumber"),
+      formData.get("Model2"),
+      formData.get("contactMethod"),
+      formData.get("serviceDate"),
+      formData.get("description"),
+      formData.get("message")
+    );
 
-    // ---------- 1️⃣ SAVE TO FIREBASE ----------
-    saveContactFormData(
-    formData.get("name"),
-    formData.get("email"),
-    formData.get("phone"),
-    formData.get("state"),
-    formData.get("city"),
-    formData.get("pincode"),
-    formData.get("Model1"),
-    formData.get("modelNumber"),
-    formData.get("Model2"),
-    formData.get("contactMethod"),
-    formData.get("serviceDate"),
-    formData.get("description"),
-    formData.get("message")
-);
-
-    // ---------- 2️⃣ SEND TO PHP ----------
-    fetch("service_enquiry.php", {
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.text())
-    .then(data => {
-        alert("Saved to Firebase + MySQL successfully!");
-        console.log(data);
-        form.reset();
-    })
-    .catch(error => {
-        console.error("Error:", error);
+    // 2️⃣ Send email using EmailJS
+    await emailjs.send("service_pcfjic4", "template_y2uki76", {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      state: formData.get("state"),
+      city: formData.get("city"),
+      pincode: formData.get("pincode"),
+      vehicleBrand: formData.get("Model1"),
+      modelNumber: formData.get("modelNumber"),
+      vehicleModel: formData.get("Model2"),
+      contactMethod: formData.get("contactMethod"),
+      serviceDate: formData.get("serviceDate"),
+      description: formData.get("description"),
+      message: formData.get("message"),
+      time: new Date().toLocaleString()
     });
 
+    // 3️⃣ Keep PHP working locally if available
+    try {
+      const response = await fetch("service_enquiry.php", {
+        method: "POST",
+        body: formData
+      });
+
+      if (response.ok) {
+        const data = await response.text();
+        console.log("PHP Response:", data);
+      }
+    } catch (phpError) {
+      console.warn("service_enquiry.php not available after deployment:", phpError);
+    }
+
+    // 4️⃣ Success UI
+    alert("Form submitted successfully!");
+    form.reset();
+
+  } catch (error) {
+    console.error("Error:", error);
+    alert("Something went wrong while submitting the form.");
+  }
 });
