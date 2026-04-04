@@ -41,7 +41,7 @@ Customer Support	Support section with future chatbot integration
 
 Installation
 Clone the repository
-git clone https://github.com/Swaroopnaik885/EV.GO.git
+git clone https://github.com/sarthakchatur4444/EV.GO.git
 Open the project folder
 cd EV.GO
 Run the project by opening index.html in your browser
@@ -49,7 +49,7 @@ Deployment
 
 The project is hosted using GitHub Pages.
 
-Live Demo:  https://swaroopnaik885.github.io/EV.GO/
+Live Demo:  https://sarthakchatur4444.github.io/EV.GO/
 
 License
 
@@ -57,6 +57,6 @@ This project is created for educational and academic purposes. You may modify an
 
 ## Credits
 
-Project idea and UI/UX design were created by [Sarthak.V.Chatur] (https://github.com/sarthakchatur4444).
+The website development, implementation, and coding were created by [Swaroop.S.Naik] (https://github.com/Swaroopnaik885).
 
-The website development, implementation, and coding were done by Swaroop Naik.
+Project idea and UI/UX design were done by Sarthak.V.Chatur.
